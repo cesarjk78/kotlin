@@ -9,14 +9,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class pagePersona extends AppCompatActivity {
+public class english extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bienvenida);
+        setContentView(R.layout.hello);
 
         // Mostrar el mensaje de bienvenida
-        Toast.makeText(this, "Bienvenido a TECSUP Vault", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Welcome to TECSUP Vault", Toast.LENGTH_LONG).show();
 
         // Configurar el clic en el primer ImageView
         ImageView imageView1 = findViewById(R.id.imageView2_1);
@@ -24,7 +24,7 @@ public class pagePersona extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cambiar el diseño al XML quiensomos
-                setContentView(R.layout.quiensomos);
+                setContentView(R.layout.whoweare);
 
                 // Configurar el botón para regresar a pagePersona
                 Button btnBack = findViewById(R.id.btnBack);
@@ -32,7 +32,7 @@ public class pagePersona extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         // Volver a la actividad anterior
-                        Intent intent = new Intent(pagePersona.this, pagePersona.class);
+                        Intent intent = new Intent(english.this, english.class);
                         startActivity(intent);
                         finish(); // Finalizar actividad actual
                     }
@@ -46,7 +46,7 @@ public class pagePersona extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Intent para iniciar la clase mapa
-                Intent intent = new Intent(pagePersona.this, mapa.class);
+                Intent intent = new Intent(english.this, mapish.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +58,7 @@ public class pagePersona extends AppCompatActivity {
             public void onClick(View v) {
                 // URI para abrir WhatsApp con un mensaje predefinido
                 String phoneNumber = "+936791144"; // Número de teléfono del contacto (con código de país)
-                String message = "Quisiera hacer una consulta"; // Mensaje a enviar
+                String message = "I would like to make a query"; // Mensaje a enviar
                 String url = "https://wa.me/" + phoneNumber + "?text=" + Uri.encode(message);
 
                 // Intent para abrir WhatsApp
@@ -74,7 +74,7 @@ public class pagePersona extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Intent para iniciar la clase inter
-                Intent intent = new Intent(pagePersona.this, inter.class);
+                Intent intent = new Intent(english.this, intersh.class);
                 startActivity(intent);
             }
         });
@@ -85,18 +85,18 @@ public class pagePersona extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Intent para iniciar la clase Filtros
-                Intent intent = new Intent(pagePersona.this, Filtersh.class);
+                Intent intent = new Intent(english.this, Filtersh.class);
                 startActivity(intent);
             }
         });
 
-        // Configurar el clic en el sexto ImageView para redirigir a la clase english
+        // Configurar el clic en el sexto ImageView para redirigir a la clase englis
         ImageView imageView6 = findViewById(R.id.imageView2_6);
         imageView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent para iniciar la clase english
-                Intent intent = new Intent(pagePersona.this, english.class);
+                // Intent para iniciar la clase pagePersona
+                Intent intent = new Intent(english.this, pagePersona.class);
                 startActivity(intent);
             }
         });
